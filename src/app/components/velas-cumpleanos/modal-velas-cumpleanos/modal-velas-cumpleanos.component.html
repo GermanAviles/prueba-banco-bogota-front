@@ -1,1 +1,42 @@
-<p>modal-velas-cumpleanos works!</p>
+<div class="modal-calcetines">
+
+  <p>
+    A continuación escribe la edad de tu sobrina para calcular
+    cuantas velas de cumpleaños podrá apagar
+  </p>
+
+  <form [formGroup]="formCumpleanos" (ngSubmit)="resolverPrueba()">
+
+    <mat-form-field appearance="fill">
+      <mat-label>¿Cuantos años cumple?</mat-label>
+      <input
+        matInput
+        placeholder="4"
+        formControlName="edadSobrina"
+        name="edadSobrina"
+      >
+      <!-- <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint> -->
+    </mat-form-field>
+
+    <button mat-stroked-button color="primary" type="submit">
+      RESOLVER Y GENERAR LISTA
+    </button>
+  </form>
+
+  <div class="respuesta" *ngIf="velasDeCumpleanos.length">
+    <div class="divider"></div>
+    <div class="respuesta__titulo">
+      <h5> Respuesta </h5>
+    </div>
+    <div class="respuesta__lista">
+      Velas
+      <span>[ {{ velasDeCumpleanos }} ]</span>
+    </div>
+    <div class="respuesta__valor">
+      Tu sobrina solo podrá apagar
+      <span class="pares-encontrados">{{ cantidadVelasApagar }}</span> {{ cantidadVelasApagar === 1 ? 'vela' : 'velas' }}
+    </div>
+  </div>
+
+
+</div>

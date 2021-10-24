@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalVelasCumpleanosComponent } from './modal-velas-cumpleanos/modal-velas-cumpleanos.component';
 
 @Component({
   selector: 'app-velas-cumpleanos',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VelasCumpleanosComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  openModal() {
+    this.dialog.open( ModalVelasCumpleanosComponent );
   }
 
 }

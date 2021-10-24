@@ -1,0 +1,69 @@
+.modal-calcetines {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.modal-calcetines form {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+form mat-form-field {
+  margin-right: 10px;
+}
+
+.respuesta {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+}
+
+.respuesta .respuesta__titulo {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+.respuesta__titulo h5{
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.respuesta .divider {
+  width: 100%;
+  border-top: 1px dashed #707070;
+  margin-bottom: 15px;
+}
+
+.respuesta .respuesta__lista {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.respuesta .respuesta__valor {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.respuesta__valor .pares-encontrados {
+  width: 30px;
+  height: 10px;
+  border-radius: 7px;
+  padding: 7px;
+  background-color: #233572;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 8px;
+}
