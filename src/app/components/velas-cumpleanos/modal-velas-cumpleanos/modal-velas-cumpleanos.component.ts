@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { GeneralService } from '../../../services/general.service';
 
 @Component({
   selector: 'app-modal-velas-cumpleanos',
@@ -16,7 +17,8 @@ export class ModalVelasCumpleanosComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-  ) { }
+    public generalService: GeneralService
+    ) { }
 
   ngOnInit(): void {
     this.crearFormulario();
@@ -24,7 +26,7 @@ export class ModalVelasCumpleanosComponent implements OnInit {
 
   crearFormulario(){
     this.formCumpleanos = this.formBuilder.group({
-      edadSobrina: [ null ]
+      edadSobrina: [ null, Validators.pattern('[0-9]+') ]
     });
   }
 

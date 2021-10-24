@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { GeneralService } from '../../../services/general.service';
 
 @Component({
   selector: 'app-modal-suma-minima-maxima',
@@ -16,6 +17,7 @@ export class ModalSumaMinimaMaximaComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    public generalService: GeneralService
   ) { }
 
   ngOnInit(): void {
@@ -24,7 +26,7 @@ export class ModalSumaMinimaMaximaComponent implements OnInit {
 
   crearFormulario(){
     this.formMinMax = this.formBuilder.group({
-      listSize: [null]
+      listSize: [null, Validators.pattern('[0-9]+')  ]
     });
   }
 

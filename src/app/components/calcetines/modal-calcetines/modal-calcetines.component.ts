@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { GeneralService } from '../../../services/general.service';
 
 @Component({
   selector: 'app-modal-calcetines',
@@ -17,6 +18,7 @@ export class ModalCalcetinesComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    public generalService: GeneralService
   ) { }
 
   ngOnInit(): void {
@@ -25,7 +27,7 @@ export class ModalCalcetinesComponent implements OnInit {
 
   crearFormulario(){
     this.formCalcetines = this.formBuilder.group({
-      cantidadCalcetines: [null]
+      cantidadCalcetines: [null, Validators.pattern('[0-9]+')]
     });
   }
 
@@ -61,6 +63,14 @@ export class ModalCalcetinesComponent implements OnInit {
     }
 
     return velas;
+  }
+
+  validarNumeros( event: any ) {
+    const key = event.charCode;
+    const valido = key >= 48 && key <= 57;
+    if ( valido === false ){
+      event.preventDefault();
+    }
   }
 
   get FC() {

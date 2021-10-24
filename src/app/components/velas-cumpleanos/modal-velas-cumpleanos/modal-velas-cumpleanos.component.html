@@ -14,6 +14,7 @@
         placeholder="4"
         formControlName="edadSobrina"
         name="edadSobrina"
+        (keypress)="generalService.soloNumerosPresionados( $event )"
       >
       <!-- <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint> -->
     </mat-form-field>
