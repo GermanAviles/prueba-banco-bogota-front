@@ -1,0 +1,41 @@
+<div class="modal-calcetines">
+
+  <p>
+    A continuación determina de que tamaño quieres
+    que sea la lista de los calcetines
+  </p>
+
+  <form [formGroup]="formCalcetines" (ngSubmit)="resolverPrueba()">
+
+    <mat-form-field appearance="fill">
+      <mat-label>Cantidad de calcetines</mat-label>
+      <input
+        matInput
+        placeholder="10"
+        formControlName="cantidadCalcetines"
+        name="cantidadCalcetines"
+      >
+      <!-- <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint> -->
+    </mat-form-field>
+
+    <button mat-stroked-button color="primary" type="submit">
+      RESOLVER Y GENERAR LISTA
+    </button>
+  </form>
+
+  <div class="respuesta" *ngIf="listaCalcetines.length">
+    <div class="divider"></div>
+    <div class="respuesta__titulo">
+      <h5> Respuesta </h5>
+    </div>
+    <div class="respuesta__lista">
+      Lista generada
+      <span>[ {{ listaCalcetines }} ]</span>
+    </div>
+    <div class="respuesta__valor">
+      <span class="pares-encontrados">{{ paresCalcetines }}</span> {{ paresCalcetines === 1 ? 'par encontrado' : 'pares encontrados' }}
+    </div>
+  </div>
+
+
+</div>
