@@ -14,6 +14,8 @@ import { CalcetinesComponent } from './components/calcetines/calcetines.componen
 import { SumaMinimaMaximaComponent } from './components/suma-minima-maxima/suma-minima-maxima.component';
 import { VelasCumpleanosComponent } from './components/velas-cumpleanos/velas-cumpleanos.component';
 import { ModalCalcetinesComponent } from './components/calcetines/modal-calcetines/modal-calcetines.component';
+import { ModalSumaMinimaMaximaComponent } from './components/suma-minima-maxima/modal-suma-minima-maxima/modal-suma-minima-maxima.component';
+import { ModalVelasCumpleanosComponent } from './components/velas-cumpleanos/modal-velas-cumpleanos/modal-velas-cumpleanos.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ModalCalcetinesComponent } from './components/calcetines/modal-calcetin
     CalcetinesComponent,
     SumaMinimaMaximaComponent,
     VelasCumpleanosComponent,
-    ModalCalcetinesComponent
+    ModalCalcetinesComponent,
+    ModalSumaMinimaMaximaComponent,
+    ModalVelasCumpleanosComponent
   ],
   imports: [
     BrowserModule,

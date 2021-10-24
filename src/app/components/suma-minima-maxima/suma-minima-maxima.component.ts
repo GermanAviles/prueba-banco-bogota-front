@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalSumaMinimaMaximaComponent } from './modal-suma-minima-maxima/modal-suma-minima-maxima.component';
 
 @Component({
   selector: 'app-suma-minima-maxima',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SumaMinimaMaximaComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  openModal() {
+    this.dialog.open( ModalSumaMinimaMaximaComponent );
   }
 
 }

@@ -1,0 +1,42 @@
+<div class="modal-calcetines">
+
+  <p>
+    A continuación determina de que tamaño quieres
+    que sea la lista para la suma
+  </p>
+
+  <form [formGroup]="formMinMax" (ngSubmit)="resolverPrueba()">
+
+    <mat-form-field appearance="fill">
+      <mat-label>Tamaño de la lista</mat-label>
+      <input
+        matInput
+        placeholder="10"
+        formControlName="listSize"
+        name="listSize"
+      >
+      <!-- <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint> -->
+    </mat-form-field>
+
+    <button mat-stroked-button color="primary" type="submit">
+      RESOLVER Y GENERAR LISTA
+    </button>
+  </form>
+
+  <div class="respuesta" *ngIf="listaNumeros.length">
+    <div class="divider"></div>
+    <div class="respuesta__titulo">
+      <h5> Respuesta </h5>
+    </div>
+    <div class="respuesta__lista">
+      Lista de números generada
+      <span>[ {{ listaNumeros }} ]</span>
+    </div>
+    <div class="respuesta__valor">
+      Mínimo <span class="pares-encontrados">{{ sumaMinimaMaxima.minimo }}</span>
+      Máximo <span class="pares-encontrados">{{ sumaMinimaMaxima.maximo }}</span>
+    </div>
+  </div>
+
+
+</div>
