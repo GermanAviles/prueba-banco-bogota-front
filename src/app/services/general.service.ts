@@ -9,7 +9,7 @@ export class GeneralService {
 
   soloNumerosPresionados( event: any ) {
     const key = event.charCode;
-    const valido = key >= 48 && key <= 57;
+    const valido = (key >= 48 && key <= 57) || key === 13;
     if ( valido === false ){
       event.preventDefault();
     }
